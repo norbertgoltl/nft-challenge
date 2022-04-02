@@ -15,7 +15,7 @@ function NFTDropPage({collection}: Props) {
   const [claimedSupply, setClaimedSupply] = useState<number>(0);
   const [totalSupply, setTotalSupply] = useState<BigNumber>();
   const [priceInEth, setPriceInEth] = useState<string>();
-  const [loading, setLoading] = useState<Boolean>(true);
+  const [loading, setLoading] = useState<boolean>(true);
   const nftDrop = useNFTDrop(collection.address)
 
   // Auth
@@ -189,9 +189,7 @@ function NFTDropPage({collection}: Props) {
         {/* Mint Button */}
         <button
           onClick={mintNft}
-          disabled={
-            loading || claimedSupply === totalSupply?.toNumber() || !address
-          }
+          disabled={ loading || claimedSupply === totalSupply?.toNumber() || !address }
           className="mt-10 h-16 font-bold text-white bg-red-600 rounded-full disabled:bg-gray-400"
         >
           {loading ? (
